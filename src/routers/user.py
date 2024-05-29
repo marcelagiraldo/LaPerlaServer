@@ -14,14 +14,6 @@ users = [
         "name": "Oscar Alzate",
         "email": "none",
         "rol":"user"
-    },
-    {
-        "id": 2,
-        "user": "alejandro",
-        "password": "hola123",
-        "name": "Alejandro",
-        "email": "none",
-        "rol":"admin"
     }
 ]
 
@@ -47,7 +39,7 @@ def get_user(id: int = Path(ge=1, le=5000)) -> User:
 
 @user_router.post('/users',tags=['users'],response_model=dict,description="Creates a new user")
 def create_user(user: User = Body()) -> dict:
-    users.append(users.model_dump())
+    users.append(user.model_dump())
     return JSONResponse(content={"message": "The user was created successfully",
         "data": user.model_dump()
     }, status_code=201)
