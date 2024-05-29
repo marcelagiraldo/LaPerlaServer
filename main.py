@@ -7,6 +7,7 @@ from src.routers.test import test_router
 from src.routers.income import income_router
 from src.routers.expense import expense_router
 from src.routers.payroll import payroll_router
+from src.routers.category import category_router
 
 #########################################################
 app = FastAPI()
@@ -38,14 +39,6 @@ app.openapi_tags = [
         "name": "users",
         "description": "user handling endpoints",
     },
-    {
-        "name": "incomes",
-        "description": "user handling endpoints",
-    },
-    {
-        "name": "expenses",
-        "description": "user handling endpoints",
-    },
 ]
 
 ########################################################
@@ -59,6 +52,7 @@ app.include_router(prefix="/test", router=test_router)
 app.include_router(prefix="/income", router=income_router)
 app.include_router(prefix="/expense", router=expense_router)
 app.include_router(prefix="/payroll", router=payroll_router)
+app.include_router(prefix="/category", router=category_router)
 
 
 

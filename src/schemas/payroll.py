@@ -18,6 +18,7 @@ class Payroll(BaseModel):
             "date_": "2024-03-13",
             "activity": "Siembra de café",
             "category": "Café",
-            "responsible": "Oscar Alzate"
+            "responsible": "Oscar Alzate",
+            "observation": "Ninguna"
         }
     }

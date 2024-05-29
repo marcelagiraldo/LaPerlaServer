@@ -59,10 +59,10 @@ def create_product(expense: Expense = Body()) -> dict:
 def update_expense(id: int = Path(ge=1),expense: Expense = Body()) -> dict:
     for element in expenses:
         if element['id'] == id:
-            element['date'] = expense.date
+            element['date_'] = expense.date_
             element['category'] = expense.category
             element['price'] = expense.price
-            element['description'] = expense.description
+            element['desciption'] = expense.desciption
             element['observation'] = expense.observation
             return JSONResponse(content={
             "message": "The expense was updated successfully",

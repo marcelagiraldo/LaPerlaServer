@@ -11,14 +11,14 @@ incomes = [
         "date_": "2024-06-13",
         "category": "Café",
         "price": "500000",
-        "desciption": "Café pergamino seco"
+        "description": "Café pergamino seco"
     },
     {
         "id": 2,
         "date_": "2024-06-11",
         "category": "Platano",
         "price": "200000",
-        "desciption": "Platano verde"
+        "description": "Platano verde"
     }
 ]
 
@@ -58,7 +58,7 @@ def create_product(income: Income = Body()) -> dict:
 def update_income(id: int = Path(ge=1),income: Income = Body()) -> dict:
     for element in incomes:
         if element['id'] == id:
-            element['date'] = income.date
+            element['date_'] = income.date_
             element['category'] = income.category
             element['price'] = income.price
             element['description'] = income.description
